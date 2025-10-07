@@ -54,7 +54,6 @@ const models = [
   { id: "llama-3.1-70b", name: "Llama 3.1 70B" },
 ];
 const Example = () => {
-  console.log("URL HERE: ", process.env.NEXT_PUBLIC_SERVER_URL);
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: nanoid(),
@@ -137,8 +136,7 @@ const Example = () => {
       setMessages((prev) => [...prev, assistantMessage]);
 
       // Make API request
-      console.log("url: ", process.env.NEXT_PUBLIC_SERVER_URL);
-      fetch(process.env.NEXT_PUBLIC_SERVER_URL || "" + "/ask", {
+      fetch("https://threepio-rag-npxn.onrender.com/ask", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
