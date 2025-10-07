@@ -54,6 +54,7 @@ const models = [
   { id: "llama-3.1-70b", name: "Llama 3.1 70B" },
 ];
 const Example = () => {
+  console.log("URL HERE: ", process.env.NEXT_PUBLIC_SERVER_URL);
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: nanoid(),
