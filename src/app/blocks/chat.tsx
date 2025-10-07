@@ -142,10 +142,13 @@ const Example = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          question: inputValue,
+          question: inputValue
         }),
       })
-        .then((response) => response.json())
+        .then((response) => {
+          console.log("response: ", response);
+          return response.json();
+        })
         .then((data) => {
           // Start typing simulation with the API response
           simulateTyping(
