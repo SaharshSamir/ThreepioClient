@@ -136,7 +136,8 @@ const Example = () => {
       setMessages((prev) => [...prev, assistantMessage]);
 
       // Make API request
-      fetch(process.env.NEXT_PUBLIC_SEVER_URL || "", {
+      console.log("url: ", process.env.NEXT_PUBLIC_SERVER_URL);
+      fetch(process.env.NEXT_PUBLIC_SERVER_URL || "" + "/ask", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
